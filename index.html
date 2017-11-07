@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>evidence.md</title><link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+<title>evidence.md</title><link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --code-block-bg-color: inherit; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
 #write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: visible; }
@@ -30,11 +31,12 @@ h4 { font-size: 1.4rem; }
 h5 { font-size: 1.2rem; }
 h6 { font-size: 1rem; }
 p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
+.typora-export p { white-space: normal; }
 .mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0rem; -webkit-margin-after: 0rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: bold; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-radius: 4px; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; margin: 4px 0px 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
@@ -48,7 +50,7 @@ table.md-table td { min-width: 80px; }
 div.hr:focus { cursor: none; }
 pre { white-space: pre-wrap; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: var(--code-block-bg-color); position: relative !important; }
 .md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 .md-fences .CodeMirror.CodeMirror-wrap { top: -1.6em; margin-bottom: -1.6em; }
 .md-fences.mock-cm { white-space: pre-wrap; }
@@ -65,12 +67,12 @@ blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; }
 @media print {
-  html, body { height: 100%; }
+  html, body { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   h1, h2, h3, h4, h5, h6 { break-after: avoid-page; orphans: 2; }
   p { orphans: 4; }
   html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 1cm; padding-right: 1cm; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   @page { margin: 20mm 0mm; }
 }
@@ -121,8 +123,11 @@ a.md-print-anchor { border-width: initial !important; border-style: none !import
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
 .MathJax_SVG { display: inline; font-style: normal; font-weight: normal; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
 .MathJax_SVG * { transition: none; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; }
 
 
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
 @font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
 @font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
 @font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
@@ -164,8 +169,7 @@ ul:last-child, ol:last-child { margin-bottom: 0px; }
 blockquote { border-left: 4px solid rgb(221, 221, 221); padding: 0px 15px; color: rgb(119, 119, 119); }
 blockquote blockquote { padding-right: 0px; }
 table { padding: 0px; word-break: initial; }
-#write { overflow-x: auto; }
-table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr { border-top: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px; }
 table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
 table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
 table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
@@ -194,11 +198,15 @@ table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
 .md-image > .md-meta { border: 1px solid rgb(221, 221, 221); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; color: inherit; }
 .md-tag { color: inherit; }
 .md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
 #typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
 #typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
 #md-notification::before { top: 10px; }
-.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.117647); }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
 header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
 
 
 
@@ -208,6 +216,6 @@ header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Aria
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-node'><h3><a name='header-n0' class='md-header-anchor '></a>1. A claim</h3><p>This page concerns the following submission:</p><blockquote><p>Optimal In-place Suffix Sorting, By Zhize Li, Jian Li and Hongwei Huo.</p></blockquote><p>The paper was accepted by ICALP 2017, under the condition of merging with another ICALP submission by Keisuke Goto (arXiv version arXiv:1703.01009). </p><p>In the arXiv version, Goto made the following claim, which implies that his work is independent of ours.</p><p><img src='./image/abstract.png' alt='notification' /></p><p>In our paper, we have three major results. Goto’s paper has one main result which is the same as one of our major results (plus an easy corollary). Hence, the ICALP PC decided that we should merge the paper. </p><p>However, after carefully reading Goto’s paper (the arXiv version), we believe that his paper is not independent from ours. In particular, the main bulk of the paper was written after reading our paper. Moreover, some of the claims made in that paper about our paper are quite misleading. Hence, we refused the merge.</p><p>The main purpose of this page is to provide evidences to support our above claim.</p><p></p><h3><a name='header-n21' class='md-header-anchor '></a>2. Evidences</h3><h4><a name='header-n22' class='md-header-anchor '></a>2.1 Time</h4><p>Our draft was uploaded on arXiv:1610.08305 in <strong>Oct. 2016</strong>. The ICALP 2017 deadline is <strong>Feb. 2017</strong>. Goto uploaded his draft on arXiv:1703.01009 in <strong>Mar. 2017</strong>.</p><h4><a name='header-n25' class='md-header-anchor '></a>2.2 <font color=red  face=“黑体”>A strong evidence </font> (One doesn’t need to read the technical content of the paper)</h4><p>Goto (implicitly) used many of our observations, lemmas and tricks in his paper. We do not believe that one could independently come up with exactly the same set of new ideas and tricks as ours. Of course, Goto did make an effort in making his paper look sufficiently (but only superficially) different from ours, by changing notations and mixing our ideas with ones in previous work (such as the ICALP 2007 paper by Franceschini and Muthukrishnan).</p><p></p><p>In our paper, we first use the notion <strong>LF-entry/RF-entry</strong>. The notion didn’t exist before our work. The notion is not a difficult one, but is crucial for our new internal counter technique, which is a new key contribution of our paper, which allows us to solve the open problems. </p><p></p><p>In Goto’s paper, it has the same notion, yet denoted as <strong>LE/RE</strong> throughout his paper. However, he used <strong>LF</strong> in Figure 3 in Section 4.2 of his paper (see the following figures), which is exact the same as ours, but inconsistent with the text of his own paper. <font color=red  face=“黑体”>It implies that the author had read our paper when he was drawing the figure. </font> </p><p>The following two figures are extracted from the arXiv version of Goto’s paper.</p><p><img src='./image/text.png' alt='notification' /></p><p><img src='./image/fig3.png' alt='notification' /></p><p>Actually, he initially used <strong>LF</strong> after reading our paper, then he attempted to cover the evidence by using the latex command to replace all <strong>LF</strong> to <strong>LE</strong>. We found the above fact in the Latex source file of his paper (we downloaded from arXiv):</p><p><img src='./image/source1.png' alt='notification' /></p><p>But unfortunately for him, changing the above command couldn’t replace the text in the figure. We notice the figure same as ours but inconsistent with the text of his paper. We believe this is a strong evidence. </p><p>We list the above figures of his paper and its corresponding parts in his Latex source file here.</p><p><img src='./image/text2.png' alt='notification' /></p><p><img src='./image/source2.png' alt='notification' /></p><p><br /></p><p><img src='./image/t6t7.png' alt='notification' /></p><p><img src="./image/t6.png" style="zoom:70%" /></p><p><img src='./image/sourcet6.png' alt='notification' /></p><p><img src="./image/t7.png" style="zoom:70%" /></p><p><img src='./image/sourcet7.png' alt='notification' /></p><p>Clearly, this indicates that the author was writing his entire paper after reading ours (and using our notion). Then, he tried to cover the fact by changing the notation to LE/RE. We believe the above strong evidence is already enough to identify his dishonest behavior. </p><p>Many technical parts of his paper are also very similar to ours (excluding what is known from the literature).</p><p>For example, Transition 7 (Sort L-suffixes from the sorted LMS-suffixes) is the main technical &quot;contribution&quot; of his paper (the length is about half of the length of all Transition 1-9). However, his step is sufficiently similar to our Step 1 (Sort all L-suffixes using induced sorting) in Section 3.7. This is where we develop the interior counter trick, which is one of the main new tricks (in this trick we used LF-entry). </p><p>In sum, it is hard for us to believe that one can come up with an algorithm so similar to ours independently, with a notation name in the figure same as ours but inconsistent with other parts of the paper, just four months after we made our work available online. Note that the problem we solved was open for ten years.</p></div>
+<div  id='write'  class = 'is-node'><h3><a name='header-n0' class='md-header-anchor '></a>1. A claim</h3><p>This page concerns the following submission:</p><blockquote><p>Optimal In-place Suffix Sorting, By Zhize Li, Jian Li and Hongwei Huo.</p></blockquote><p>The paper was accepted by ICALP 2017, under the condition of merging with another ICALP submission by Keisuke Goto (arXiv version arXiv:1703.01009). </p><p>In the arXiv version, Goto made the following claim, which implies that his work is independent of ours.</p><p><img src='./image/abstract.png' alt='notification' /></p><p>In our paper, we have three major results. Goto’s paper has one main result which is the same as one of our major results (plus an easy corollary). Hence, the ICALP PC decided that we should merge the paper. </p><p>However, after carefully reading Goto’s paper (the arXiv version), we believe that his paper is not independent from ours. In particular, the main bulk of the paper was written after reading our paper. Moreover, some of the claims made in that paper about our paper are quite misleading. Hence, we refused the merge.</p><p>The main purpose of this page is to provide evidences to support our above claim.</p><p></p><h3><a name='header-n21' class='md-header-anchor '></a>2. Evidences</h3><h4><a name='header-n22' class='md-header-anchor '></a>2.1 Time</h4><p>Our draft was uploaded on arXiv:1610.08305 in <strong>Oct. 2016</strong>. The ICALP 2017 deadline is <strong>Feb. 2017</strong>. Goto uploaded his draft on arXiv:1703.01009 in <strong>Mar. 2017</strong>.</p><h4><a name='header-n25' class='md-header-anchor '></a>2.2 <font color=red  face=“黑体”>A strong evidence </font> (One doesn’t need to read the technical content of the paper)</h4><p>Goto (implicitly) used many of our observations, lemmas and tricks in his paper. We do not believe that one could independently come up with exactly the same set of new ideas and tricks as ours. Of course, Goto did make an effort in making his paper look sufficiently (but only superficially) different from ours, by changing notations and mixing our ideas with ones in previous work (such as the ICALP 2007 paper by Franceschini and Muthukrishnan).</p><p></p><p>In our paper, we first use the notation <strong>LF-entry/RF-entry</strong>. The notation didn’t exist before our work. The notation is not a difficult one, but is crucial for our new interior counter technique, which is a new key contribution of our paper, which allows us to solve the open problems. </p><p></p><p>In Goto’s paper, it has the same notation, yet denoted as <strong>LE/RE</strong> throughout his paper. However, he used <strong>LF</strong> in Figure 3 in Section 4.2 of his paper (see the following figures), which is exact the same as ours, but inconsistent with the text of his own paper. <font color=red  face=“黑体”>It implies that the author had read our paper when he was drawing the figure. </font> </p><p>The following two figures are extracted from the arXiv version of Goto’s paper.</p><p><img src='./image/text.png' alt='notification' /></p><p><img src='./image/fig3.png' alt='notification' /></p><p>Actually, he initially used <strong>LF</strong> after reading our paper, then he attempted to cover the evidence by using the latex command to replace all <strong>LF</strong> to <strong>LE</strong>. We found the above fact in the Latex source file of his paper (we downloaded from arXiv):</p><p><img src='./image/source1.png' alt='notification' /></p><p>But unfortunately for him, changing the above command couldn’t replace the text in the figure. We notice the figure same as ours but inconsistent with the text of his paper. We believe this is a strong evidence. </p><p>We list the above figures of his paper and its corresponding parts in his Latex source file here.</p><p><img src='./image/text2.png' alt='notification' /></p><p><img src='./image/source2.png' alt='notification' /></p><p><br /></p><p><img src='./image/t6t7.png' alt='notification' /></p><p><img src="./image/t6.png" style="zoom:70%" /></p><p><img src='./image/sourcet6.png' alt='notification' /></p><p><img src="./image/t7.png" style="zoom:70%" /></p><p><img src='./image/sourcet7.png' alt='notification' /></p><p>Clearly, this indicates that the author was writing his entire paper after reading ours (and using our notations). Then, he tried to cover the fact by changing the notation to LE/RE. We believe the above strong evidence is already enough to identify his dishonest behavior. </p><p>Many technical parts of his paper are also very similar to ours (excluding what is known from the literature).</p><p>For example, Transition 7 (Sort L-suffixes from the sorted LMS-suffixes) is the main technical &quot;contribution&quot; of his paper (the length is about half of the length of all Transition 1-9). However, his step is sufficiently similar to our Step 1 (Sort all L-suffixes using induced sorting) in Section 3.7. This is where we develop the interior counter trick, which is one of the main new tricks (in this trick we used LF-entry). </p><p>In sum, it is hard for us to believe that one can come up with an algorithm so similar to ours independently, with a notation name in the figure same as ours but inconsistent with other parts of the paper, just four months after we made our work available online. Note that the problem we solved was open for ten years.</p></div>
 </body>
 </html>
